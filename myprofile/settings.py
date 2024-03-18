@@ -30,7 +30,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
 DEBUG = False
-ALLOWED_HOSTS = ["sitaramportfolio.onrender.com"]
+ALLOWED_HOSTS = ["sitaramportfolio.onrender.com","*"]
 
 
 # Application definition
@@ -162,5 +162,5 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOWED_ORIGINS = [
-   "https://sitaramportfolio.onrender.com/"
+    'https://sitaramportfolio.onrender.com',
 ]

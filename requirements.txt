@@ -3,6 +3,7 @@ argon2-cffi-bindings==21.2.0
 asgiref==3.7.2
 cffi==1.16.0
 Django==4.1
+django-cors-headers==4.3.1
 gunicorn==21.2.0
 mysqlclient==2.2.4
 packaging==24.0

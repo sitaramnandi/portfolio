@@ -1,0 +1,16 @@
+# Ignore Python bytecode files
+__pycache__/
+*.pyc
+
+# Ignore environment-specific settings files
+*.env
+
+# Ignore Django migration files
+**/migrations/
+
+# Ignore local development settings file
+local_settings.py
+
+# Ignore IDE or editor specific files
+.idea/
+.vscode/

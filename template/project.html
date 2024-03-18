@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>project</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Favicons -->
+   <!-- <link href="img/favicon.png" rel="icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon"> -->
+
+  <!-- Bootstrap CSS File -->
+  <link href='{% static "lib/bootstrap/css/bootstrap.min.css" %}' rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href='{% static "lib/font-awesome/css/font-awesome.min.css" %}' rel="stylesheet">
+  <link href='{% static "lib/animate/animate.min.css" %}' rel="stylesheet">
+  <link href='{% static "lib/ionicons/css/ionicons.min.css" %}' rel="stylesheet">
+  <link href='{% static "lib/owlcarousel/assets/owl.carousel.min.css" %}' rel="stylesheet">
+  <link href='{% static "lib/lightbox/css/lightbox.min.css" %}' rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href='{% static "css/style.css" %}' rel="stylesheet">
+
+  <!-- =======================================================
+    Theme Name: DevFolio
+    Theme URL: https://bootstrapmade.com/devfolio-bootstrap-portfolio-html-template/
+    Author: BootstrapMade.com
+    License: https://bootstrapmade.com/license/
+  ======================================================= -->
+  
+</head>
+
+<body id="page-top">
+
+  <!--/ Nav Star /-->
+  <nav class="navbar navbar-b navbar-trans navbar-expand-md fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll" href="#page-top">DevFolio</a>
+      <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault"
+        aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="navbar-collapse collapse justify-content-end" id="navbarDefault">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link js-scroll active" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll" href="/about">About</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link js-scroll" href="#service">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll" href="#work">Work</a>
+          </li> -->
+          <li class="nav-item">
+            <a class="nav-link js-scroll" href="/project">Project</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll" href="/contact">Contact</a>
+          </li>
+          {% if user.is_authenticated %}
+            <!-- User is authenticated, hide signup and login buttons -->
+            <li class="nav-item">
+              <a class="nav-link js-scroll" href="/accounts/logout/">Logout</a>
+            </li>
+          {% else %}
+            <!-- User is not authenticated, show signup and login buttons -->
+            <li class="nav-item">
+              <a class="nav-link js-scroll" href="/signup">SignUp</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll" href="/accounts/login/">Login</a>
+            </li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!--/ Nav End /-->
+
+  <!--/ Intro Skew Star /-->
+  <div id="home" class="intro route bg-image" style="background-image:url('{% static 'img/project.jpg' %}')">
+    <div class="overlay-itro"></div>
+    <div class="intro-content display-table">
+      <div class="table-cell">
+        <div class="container">
+          <p class="display-6 color-d">project</p>
+           <h1 class="intro-title mb-4">I am Sitaram</h1>
+          <p class="intro-subtitle"><span class="text-slider-items">Python Developer,Web Developer,Frontend Developer,Big data Enginer</span><strong class="text-slider"></strong></p>
+          <p class="pt-3"><a class="btn btn-primary btn js-scroll px-4" href="/about" role="button">Learn More</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+
+  <!-- / Section Blog Star / -->
+  <section id="blog" class="blog-mf sect-pt4 route">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="title-box text-center">
+            <h3 class="title-a">
+              Project
+            </h3>
+            <p class="subtitle-a">
+              Projects uing DJANGO Framework
+            </p>
+            <div class="line-mf"></div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card card-blog">
+            <div class="card-img">
+              <a href="https://github.com/sitaramnandi/New-Django-Project"><img src={% static "img/django.jpg" alt="" class="img-fluid" %}></a>
+            </div>
+            <div class="card-body">
+              <div class="card-category-box">
+                <div class="card-category">
+                  <h6 class="category">Django</h6>
+                </div>
+              </div>
+              <h3 class="card-title"><a href="https://github.com/sitaramnandi/New-Django-Project">Clik to View My GitHub </a></h3>
+              <p class="card-description">
+                MinWater Park project 
+              </p>
+            </div>
+            <div class="card-footer">
+              <div class="post-author">
+                <!-- <a href="#"> -->
+                  <img src={% static "img/git.jpg" alt="" class="avatar rounded-circle" %} >
+                  <span class="author">MIN Water prak</span>
+                <!-- </a> -->
+              </div>
+              
+            </div>
+          </div>
+        </div>
+        
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+  <div id="preloader"></div> -->
+
+  <!-- JavaScript Libraries -->
+  <script src='{% static "lib/jquery/jquery.min.js" %}'></script>
+  <script src='{% static "lib/jquery/jquery-migrate.min.js" %}'></script>
+  <script src='{% static "lib/popper/popper.min.js" %}'></script>
+  <script src='{% static "lib/bootstrap/js/bootstrap.min.js" %}'></script>
+  <script src='{% static "lib/easing/easing.min.js" %}'></script>
+  <script src='{% static "lib/counterup/jquery.waypoints.min.js" %}'></script>
+  <script src='{% static "lib/counterup/jquery.counterup.js" %}'></script>
+  <script src='{% static "lib/owlcarousel/owl.carousel.min.js" %}'></script>
+  <script src='{% static "lib/lightbox/js/lightbox.min.js" %}'></script>
+  <script src='{% static "lib/typed/typed.min.js" %}'></script>
+  <!-- Contact Form JavaScript File -->
+  
+
+  <!-- Template Main Javascript File -->
+  <script src='{% static "js/main.js" %}'></script>
+  {% block body_block %}
+  {% endblock %}
+
+</body>
+</html>

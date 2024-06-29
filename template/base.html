@@ -21,10 +21,10 @@
   <link href='{% static "lib/animate/animate.min.css" %}' rel="stylesheet">
   <link href='{% static "lib/ionicons/css/ionicons.min.css" %}' rel="stylesheet">
   <link href='{% static "lib/owlcarousel/assets/owl.carousel.min.css" %}' rel="stylesheet">
-  <link href='{% static "lib/lightbox/css/lightbox.min.css" %}' rel="stylesheet">
+  <link href='{% static "lib/lightbox/css/lightbox.min.css" %}' rel="stylesheet'>
 
   <!-- Main Stylesheet File -->
-  <link href='{% static "css/style.css" %}' rel="stylesheet">  
+  <link href='{% static "css/style.css" %}' rel="stylesheet'>  
 </head>
 
 <body id="page-top">
@@ -82,25 +82,19 @@
           {% if user.is_authenticated %}
           <div class="welcome-message">
             <h3 class="intro-title mb-1"> Welcome, {{ user.username }}!</h3>
-           
             <h1 class="intro-title mb-4">I am Sitaram</h1>
-        </div>
-        <p class="intro-subtitle"><span class="text-slider-items">Python Developer,Web Developer,Frontend Developer,Big data Enginer</span><strong class="text-slider"></strong></p>
-        <p class="pt-3"><a class="btn btn-primary btn js-scroll px-4" href="/about" role="button">Learn More</a></p>
-      {% else %}
+          </div>
+          <p class="intro-subtitle"><span class="text-slider-items">Python Developer,Web Developer,Frontend Developer,Big data Enginer</span><strong class="text-slider"></strong></p>
+          {% else %}
           <!-- <h3 class="display-6 color-d">Login to see my, Profile!</h3> -->
-          <h1 class="intro-title mb-4">Login To See My, Profile!</h1>
-           <h1 class="intro-title mb-4">I am Sitaram</h1>
-           <p class="pt-3"><a class="btn btn-primary btn js-scroll px-4" href="/about" role="button">Learn More</a></p>
-           {% endif %}
-          <!-- <p class="intro-subtitle"><span class="text-slider-items">Python Developer,Web Developer,Frontend Developer,Big data Enginer</span><strong class="text-slider"></strong></p>
-          <p class="pt-3"><a class="btn btn-primary btn js-scroll px-4" href="/about" role="button">Learn More</a></p> -->
+          <h1 class="intro-title mb-4">Hello Welcome to My Profile!</h1>
+          <h1 class="intro-title mb-4">I am Sitaram</h1>
+          <p class="pt-3"><a class="btn btn-primary btn js-scroll px-4" href="/about" role="button">Learn More</a></p>
+          {% endif %}
         </div>
       </div>
     </div>
   </div>
-
-
 
   <!-- <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
   <div id="preloader"></div> -->
@@ -117,12 +111,10 @@
   <script src='{% static "lib/lightbox/js/lightbox.min.js" %}'></script>
   <script src='{% static "lib/typed/typed.min.js" %}'></script>
   <!-- Contact Form JavaScript File -->
-  
 
   <!-- Template Main Javascript File -->
   <script src='{% static "js/main.js" %}'></script>
   {% block body_block %}
   {% endblock %}
-
 </body>
 </html>

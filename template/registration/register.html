@@ -32,6 +32,10 @@
         color: whitesmoke;
         
     }
+    .error-message {
+        color: red;
+        font-weight: bold;
+    }
   </style>
 </head>
 
@@ -91,31 +95,50 @@
            <h1 class="intro-title mb-4">SIGNUP</h1>
           <!-- <p class="intro-subtitle"><span class="text-slider-items">LOGIN</span><strong class="text-slider"></strong></p>  -->
           <!-- <h2>Register</h2> -->
-          <form method="post" >
-              {% csrf_token %}
-              <!-- <h3>REGISTER</h3> -->
-              <h5>{{form.username.label}}</h5>
-              {{form.username}}
-              <h5>{{form.email.label}}</h5>
-              {{form.email}}
-              <h5>{{form.password1.label}}</h5>
-              {{form.password1}}
-              <h5>{{form.password2.label}}</h5>
-              {{form.password2}} <br> <br>
-              <input type="submit" name="Create User" class="btn btn-success">
-          </form>
-          <p style="color: #fff;">Already have an account? <a href="/accounts/login/" style="color: #0ccf05;">Login</a></p>
-
-          {% if form.errors %}
-          <div class="p-3 mb-2 bg-danger text-white">
-              <strong>Error:</strong> Please correct the errors below.
-              <ul>
-                  {% for error in form.errors %}
-                      <li>{{ error }}</li>
-                  {% endfor %}
-              </ul>
-          </div>
-      {% endif %}
+          <form method="post">
+            {% csrf_token %}
+            <!-- <h3>REGISTER</h3> -->
+            <h5>{{ form.username.label }}</h5>
+            {{ form.username }}
+            {% for error in form.username.errors %}
+                <div class="error-message">{{ error }}</div>
+            {% endfor %}
+        
+            <h5>{{ form.email.label }}</h5>
+            {{ form.email }}
+            {% for error in form.email.errors %}
+                <div class="error-message">{{ error }}</div>
+            {% endfor %}
+        
+            <h5>{{ form.password1.label }}</h5>
+            {{ form.password1 }}
+            {% for error in form.password1.errors %}
+                <div class="error-message">{{ error }}</div>
+            {% endfor %}
+        
+            <h5>{{ form.password2.label }}</h5>
+            {{ form.password2 }}
+            {% for error in form.password2.errors %}
+                <div class="error-message">{{ error }}</div>
+            {% endfor %}
+            <br><br>
+            <input type="submit" name="Create User" class="btn btn-success">
+        </form>
+        
+        <p style="color: #fff;">Already have an account? <a href="/accounts/login/" style="color: #0ccf05;">Login</a></p>
+        
+        {% if form.non_field_errors %}
+            <div class="error-message">
+                <strong>Error:</strong> Please correct the errors below.
+                <ul>
+                    {% for error in form.non_field_errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+        
+        
         </div>
       </div>
     </div>

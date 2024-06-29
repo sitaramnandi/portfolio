@@ -93,10 +93,13 @@
     <div class="intro-content display-table">
       <div class="table-cell">
         <div class="container">
-          <p class="display-6 color-d">project</p>
+          <p class="display-6 color-d">Project</p>
            <h1 class="intro-title mb-4">I am Sitaram</h1>
-          <p class="intro-subtitle"><span class="text-slider-items">Python Developer,Web Developer,Frontend Developer,Big data Enginer</span><strong class="text-slider"></strong></p>
+          <p class="intro-subtitle"><span class="text-slider-items">Python Developer,Web Developer,Big data Enginer</span><strong class="text-slider"></strong></p>
+          {% if not user.is_authenticated %}
           <p class="pt-3"><a class="btn btn-primary btn js-scroll px-4" href="/about" role="button">Learn More</a></p>
+          <!-- <h1 class="intro-title mb-4">I am Sitaram</h1> -->
+        {% endif %}
         </div>
       </div>
     </div>

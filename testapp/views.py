@@ -1,6 +1,11 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth.decorators import login_required
 from testapp.form import contactusform,CustomUserForm
+from testapp.models import contactus
+from django.core.mail import send_mail
+from django.conf import settings
+from django.contrib import messages
+
 # Create your views here.
 def home_page(request):
     return render(request,"home.html")
@@ -13,11 +18,28 @@ def project_page(request):
 
 
 def contactus_page(request):
-    form=contactusform()
+    # form=contactusform()
     if request.method=="POST":
-        form=contactusform(request.POST)
-        if form.is_valid():
-            form.save()
+        name=request.POST.get("name")
+        email=request.POST.get("email")
+        subject=request.POST.get("subject")
+        message=request.POST.get("message")
+        contact_entry=contactus(name=name,email=email,subject=subject,message=message)
+        contact_entry.save()
+
+        #send email notification  
+        send_mail(
+            subject,
+            f'From:{name} <{email}>\n\n{message}',
+            settings.EMAIL_HOST_USER,
+            [settings.EMAIL_HOST_USER],
+            fail_silently=False
+                    
+                    )
+        # Show success message
+        messages.success(request, 'Your message has been sent. Thank you!')
+          # Redirect back to the contact page
+        return redirect('contact')  # Adjust the URL name as per your URL configuration
             
     return render(request,"contactus.html")
 

@@ -165,3 +165,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ALLOWED_ORIGINS = [
     'https://sitaramportfolio.onrender.com',
 ]
+
+# Email setting 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_FROM = 'sitarampravashnandi@gmail.com'
+EMAIL_HOST_USER = 'sitarampravashnandi@gmail.com'
+EMAIL_HOST_PASSWORD = 'zjkf mxej yhts juqx'

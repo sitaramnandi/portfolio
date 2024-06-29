@@ -89,6 +89,8 @@
             <input type="submit" value="Login" class="btn btn-primary">
     
         </form>
+        <!-- Sign Up link below the login button -->
+        <p style="color: #fff;">Don't have an account? <a href="/signup" style="color: #cf0505;">Sign Up</a></p>
         </div>
       </div>
     </div>
@@ -117,7 +119,20 @@
   <script src='{% static "lib/lightbox/js/lightbox.min.js" %}'></script>
   <script src='{% static "lib/typed/typed.min.js" %}'></script>
   <!-- Contact Form JavaScript File -->
-  
+  <script>
+    $(document).ready(function() {
+      // Toggle password visibility
+      $(".toggle-password").click(function() {
+        $(this).toggleClass("fa-eye fa-eye-slash");
+        var input = $($(this).attr("toggle"));
+        if (input.attr("type") == "password") {
+          input.attr("type", "text");
+        } else {
+          input.attr("type", "password");
+        }
+      });
+    });
+  </script>
 
   <!-- Template Main Javascript File -->
   <script src='{% static "js/main.js" %}'></script>

@@ -152,7 +152,9 @@ USE_TZ = True
 STATIC_URL = 'static/'
 # STATICFILES_DIRS=[STAIC_DIR]
 LOGOUT_REDIRECT_URL ="/"
-LOGIN_REDIRECT_URL ="/about"
+# LOGIN_REDIRECT_URL ="/"
+LOGIN_REDIRECT_URL = 'https://github.com/sitaramnandi/New-Django-Project'
+
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),

@@ -61,12 +61,12 @@
           </li>
         {% else %}
           <!-- User is not authenticated, show signup and login buttons -->
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link js-scroll" href="/signup">SignUp</a>
-          </li>
-          <li class="nav-item">
+          </li> -->
+          <!-- <li class="nav-item">
             <a class="nav-link js-scroll" href="/accounts/login/">Login</a>
-          </li>
+          </li> -->
         {% endif %}
         </ul>
       </div>
@@ -86,6 +86,8 @@
           <form method="post">
             {{form.as_p}}
             {% csrf_token %}
+            <input type="hidden" name="next" value="{{ request.GET.next|default:'https://github.com/sitaramnandi/New-Django-Project' }}">
+
             <input type="submit" value="Login" class="btn btn-primary">
     
         </form>

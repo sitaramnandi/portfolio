@@ -67,20 +67,20 @@
           <li class="nav-item">
             <a class="nav-link js-scroll" href="/contact">Contact</a>
           </li>
-          {% if user.is_authenticated %}
+          <!-- {% if user.is_authenticated %} -->
             <!-- User is authenticated, hide signup and login buttons -->
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link js-scroll" href="/accounts/logout/">Logout</a>
             </li>
-          {% else %}
+          {% else %} -->
             <!-- User is not authenticated, show signup and login buttons -->
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link js-scroll" href="/signup">SignUp</a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll" href="/accounts/login/">Login</a>
             </li>
-          {% endif %}
+          {% endif %} -->
         </ul>
       </div>
     </div>
@@ -106,58 +106,96 @@
   </div>
  
 
-  <!-- / Section Blog Star / -->
-  <section id="blog" class="blog-mf sect-pt4 route">
+    <!-- / Section Blog Star /  -->
+    <section id="blog" class="blog-mf sect-pt4 route">
     <div class="container">
       <div class="row">
         <div class="col-sm-12">
           <div class="title-box text-center">
-            <h3 class="title-a">
-              Project
-            </h3>
-            <p class="subtitle-a">
-              Projects uing DJANGO Framework
-            </p>
+            <h3 class="title-a">Project</h3>
+            <p class="subtitle-a">Projects using DJANGO Framework</p>
             <div class="line-mf"></div>
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-md-4">
-          <div class="card card-blog">
-            <div class="card-img">
-              <a href="https://github.com/sitaramnandi/New-Django-Project"><img src={% static "img/django.jpg" alt="" class="img-fluid" %}></a>
-            </div>
+      <div class="row card-container">
+        <div class="col-md-4 card-item">
+          <div class="card">
             <div class="card-body">
               <div class="card-category-box">
-                <div class="card-category">
-                  <h6 class="category">Django</h6>
+                <div class="card-category" style="text-align: center;">
+                  <h6 class="category" >Django</h6>
                 </div>
               </div>
-              <h3 class="card-title"><a href="https://github.com/sitaramnandi/New-Django-Project">Clik to View My GitHub </a></h3>
+              <h3 class="card-title">MinWater Park project</h3>
               <p class="card-description">
-                MinWater Park project 
+                Description:
+                The Mini Water Park Management System is a web application developed with Python and Django to
+                efficiently manage mini water park operations. It provides a user-friendly interface for handling various tasks. <br>
+                SKILL- DJANGO,HTML,CSS,BOOTSTRAP
+
               </p>
             </div>
             <div class="card-footer">
-              <div class="post-author">
-                <!-- <a href="#"> -->
-                  <img src={% static "img/git.jpg" alt="" class="avatar rounded-circle" %} >
-                  <span class="author">MIN Water prak</span>
-                <!-- </a> -->
+              <div class="author-buttons">
+                <a href="#" class="btn btn-primary btn-sm" target="_blank">See the Website</a>
+                <a href="{% url 'register' %}" class="btn btn-secondary btn-sm">See the Code</a>
               </div>
-              
             </div>
           </div>
         </div>
-        
+        <div class="col-md-4 card-item">
+          <div class="card">
+            <div class="card-body">
+              <div class="card-category-box">
+                <div class="card-category" style="text-align: center;">
+                  <h6 class="category">DJANGO REST API</h6>
+                </div>
+              </div>
+              <h3 class="card-title">NEWS APP </h3>
+              <p class="card-description">
+                Description:
+                A news app developed with Django, incorporating web scraping, cron jobs for scheduled updates, and integration with RDS and Redis for efficient data management and caching.<br>
+                SKILL- DJANGO,REST API,REACT NATIVE
+              </p>
+            </div>
+            <div class="card-footer">
+              <div class="author-buttons">
+                <a href="https://www.studytapnews.com/" class="btn btn-primary btn-sm" target="_blank">See the Website</a>
+                <a href="https://play.google.com/store/apps/details?id=com.edstudytapnews&pcampaignid=web_share" class="btn btn-secondary btn-sm">PLAY STORE</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 card-item">
+          <div class="card">
+            <div class="card-body">
+              <div class="card-category-box">
+                <div class="card-category" style="text-align: center;">
+                  <h6 class="category">
+                    FREELANCE</h6>
+                </div>
+              </div>
+              <h3 class="card-title">STUDIO WEBSITE </h3>
+              <p class="card-description">
+                Description:
+                Developed a freelance project for Max Moments, a studio specializing in capturing memorable moments. The site features a sleek, modern design, built to showcase the studio  services. <br>
+              SKILL- HTML,CSS,BOOTSTRAP,JS
+              </p>
+            </div>
+            <div class="card-footer">
+              <div class="author-buttons">
+                <a href="https://maxmoments.in/" class="btn btn-primary btn-sm" target="_blank">See the Website</a>
+                <!-- <a href="{% url 'register' %}" class="btn btn-secondary btn-sm">See the Code</a> -->
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
-  <!-- <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+<!-- <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
   <div id="preloader"></div> -->
 
   <!-- JavaScript Libraries -->

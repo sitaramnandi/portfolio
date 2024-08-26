@@ -9,10 +9,10 @@ from django.contrib import messages
 # Create your views here.
 def home_page(request):
     return render(request,"home.html")
-@login_required
+# @login_required
 def about_page(request):
     return render(request,"about.html")
-@login_required()
+# @login_required()
 def project_page(request):
     return render(request,"project.html")
 
@@ -44,14 +44,37 @@ def contactus_page(request):
     return render(request,"contactus.html")
 
 # signup page
-def register(request):
-    form=CustomUserForm()
-    if request.method=="POST":
-        form=CustomUserForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect("/accounts/login/")
+# def register(request):
+#     form=CustomUserForm()
+#     if request.method=="POST":
+#         form=CustomUserForm(request.POST)
+#         if form.is_valid():
+#             form.save()
+#             return redirect("/accounts/login/")
     
 
-    return render(request,'registration/register.html', {'form': form})
+#     return render(request,'registration/register.html', {'form': form})
+from django.contrib.auth import login, authenticate
 
+def register(request):
+    form = CustomUserForm()
+    if request.method == "POST":
+        form = CustomUserForm(request.POST)
+        if form.is_valid():
+            form.save()
+            # Redirect directly to the GitHub repository after successful signup
+            return redirect('https://github.com/sitaramnandi/New-Django-Project')
+
+    return render(request, 'registration/register.html', {'form': form})
+
+from django.contrib.auth.views import LoginView
+class CustomLoginView(LoginView):
+    def form_valid(self, form):
+        # Call the parent method to handle form validation and login
+        response = super().form_valid(form)
+        # Redirect to GitHub after successful login
+        return redirect('https://github.com/sitaramnandi/New-Django-Project')
+
+    def get_success_url(self):
+        # If using get_success_url for any additional logic
+        return 'https://github.com/sitaramnandi/New-Django-Project'

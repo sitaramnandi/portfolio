@@ -1,166 +1,110 @@
 <!DOCTYPE html>
 {% extends "base.html" %}
-    {% load static %}
+{% load static compress %}
    
-    {% block body_block %}
-    <html lang="en">
-    <head>
-      <meta charset="utf-8">
-      <title>about</title>
-      <meta content="width=device-width, initial-scale=1.0" name="viewport">
-      <meta content="" name="keywords">
-      <meta content="" name="description">
-    
-      <!-- Favicons -->
-       <!-- <link href="img/favicon.png" rel="icon">
-      <link href="img/apple-touch-icon.png" rel="apple-touch-icon"> -->
-    
-      <!-- Bootstrap CSS File -->
-      <link href='{% static "lib/bootstrap/css/bootstrap.min.css" %}' rel="stylesheet">
-    
-      <!-- Libraries CSS Files -->
-      <link href='{% static "lib/font-awesome/css/font-awesome.min.css" %}' rel="stylesheet">
-      <link href='{% static "lib/animate/animate.min.css" %}' rel="stylesheet">
-      <link href='{% static "lib/ionicons/css/ionicons.min.css" %}' rel="stylesheet">
-      <link href='{% static "lib/owlcarousel/assets/owl.carousel.min.css" %}' rel="stylesheet">
-      <link href='{% static "lib/lightbox/css/lightbox.min.css" %}' rel="stylesheet">
-    
-      <!-- Main Stylesheet File -->
-      <link href='{% static "css/style.css" %}' rel="stylesheet">
-    
-      <!-- =======================================================
-        Theme Name: DevFolio
-        Theme URL: https://bootstrapmade.com/devfolio-bootstrap-portfolio-html-template/
-        Author: BootstrapMade.com
-        License: https://bootstrapmade.com/license/
-      ======================================================= -->
-      
-    </head>
-    
-    <body id="page-top">
-
-      
-        <section id="about" class="about-mf sect-pt4 route">
-            
-            <div class="container">
-              <div class="row">
-                <div class="col-sm-12">
-                  <div class="box-shadow-full">
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="row">
-                          <div class="col-sm-6 col-md-5">
-                            <div class="about-img">
-                              <img src="{% static 'img/raj.jpg' %}" class="img-fluid rounded b-shadow-a" alt="">
-                            </div>
-                          </div>
-                          
-                          <div class="col-sm-6 col-md-7">
-                            <h5 class="title-left">
-                                About me
-                              </h5>
-                            <div class="about-info">
-                              <p><span class="title-s">Name: </span> <span>Sitaram Pravsh chandra Nandi</span></p>
-                              <p><span class="title-s">Profile: </span> <span>Python Developer</span></p>
-                              <p><span class="title-s">Email: </span><span>sitarampravshnandi@gmail.com</span></p>
-                              <p><span class="title-s">Phone: </span> <span>91-9937021721</span></p>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="skill-mf">
-                          <p class="title-s">Skill</p>
-                          <span>PYTHON</span> <span class="pull-right">85%</span>
-                          <div class="progress">
-                            <div class="progress-bar" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0"
-                              aria-valuemax="100"></div>
-                          </div>
-                          <span>DJANGO</span> <span class="pull-right">85%</span>
-                          <div class="progress">
-                            <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0"
-                              aria-valuemax="100"></div>
-                          </div>
-                          <span>AWS</span> <span class="pull-right">75%</span>
-                          <div class="progress">
-                            <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0"
-                              aria-valuemax="100"></div>
-                          </div>
-                          
-                          
-                          <span>MYSQL</span> <span class="pull-right">70%</span>
-                          <div class="progress">
-                            <div class="progress-bar" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0"
-                              aria-valuemax="100"></div>
-                          </div>
-                          <span>HTML</span> <span class="pull-right">60%</span>
-                          <div class="progress">
-                            <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="90" aria-valuemin="0"
-                              aria-valuemax="100"></div>
-                          </div>
-                          <span>CSS</span> <span class="pull-right">50%</span>
-                          <div class="progress">
-                            <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="90" aria-valuemin="0"
-                              aria-valuemax="100"></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="about-me pt-4 pt-md-0">
-                          <div class="title-box-2">
-                            <h5 class="title-left">
-                              About me
-                            </h5>
-                          </div>
-                          <p class="lead">
-                            I'm Sitaram, a passionate Python developer with a strong foundation in software development. My journey in the world of programming started at Naresh IT, where I completed my training and honed my skills in Python.
-                            My goal is to continue growing as a Python developer, staying up-to-date with the latest technologies, and contributing to projects that make a positive impact. 
-                          </p>
-                        
-                          <div class="about-me pt-4 pt-md-0">
-                            <div class="title-box-2">
-                              <h5 class="title-left">
-                                Education
-                              </h5>
-                            </div>
-                            <p class="lead">
-                              <!-- Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Curabitur arcu erat, accumsan id
-                              imperdiet et, porttitor
-                              at sem. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Nulla
-                              porttitor accumsan tincidunt. -->
-                              <b>Degree:Bachelor of Science</b><br>
-                              
-                              <b>University:Utkal University</b><br>
-                              <b>Percentage:62%</b><br>
-                              <b>Location: Cuttack, Odisha</b><br>
-                              <b>Year: 2019-2022</b><br>
-
-
-                            </p>
-                            <p class="lead">
-                              <!-- Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Curabitur arcu erat, accumsan id
-                              imperdiet et, porttitor
-                              at sem. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Nulla
-                              porttitor accumsan tincidunt. -->
-                              <b>Intermidiate</b><br>
-                              
-                              <b>Sriram Higher Secondary School</b><br>
-                              <b>Percentage:61%</b><br>
-                              <b>Location: Salipur, Odisha</b><br>
-                              <b>Year: 2017-2019</b><br>
-
-
-                            </p>
-                        </div>
-                        
-                      </div>
+{% block body_block %}
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>About</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% compress css %}
+  <link href="{% static 'lib/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'lib/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+  <link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet">
+  <link href="{% static 'lib/ionicons/css/ionicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+  <link href="{% static 'lib/lightbox/css/lightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+  {% endcompress %}
+</head>
+<body id="page-top">
+  <section id="about" class="about-mf sect-pt4 route">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="box-shadow-full">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="row">
+                  <div class="col-sm-6 col-md-5">
+                    <div class="about-img">
+                      <img src="{% static 'img/raj.jpg' %}" class="img-fluid rounded b-shadow-a" alt="Profile Picture">
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-md-7">
+                    <h5 class="title-left">About Me</h5>
+                    <div class="about-info">
+                      <p><span class="title-s">Name: </span><span>Sitaram Pravsh Chandra Nandi</span></p>
+                      <p><span class="title-s">Profile: </span><span>Python Developer</span></p>
+                      <p><span class="title-s">Email: </span><span>sitarampravshnandi@gmail.com</span></p>
+                      <p><span class="title-s">Phone: </span><span>91-9937021721</span></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="skill-mf">
+                  <p class="title-s">Skills</p>
+                  <div class="progress-bar-wrapper">
+                    <span>PYTHON</span><span class="pull-right">85%</span>
+                    <div class="progress">
+                      <div class="progress-bar" style="width: 85%;"></div>
+                    </div>
+                    <span>DJANGO</span><span class="pull-right">85%</span>
+                    <div class="progress">
+                      <div class="progress-bar" style="width: 85%;"></div>
+                    </div>
+                    <span>AWS</span><span class="pull-right">75%</span>
+                    <div class="progress">
+                      <div class="progress-bar" style="width: 75%;"></div>
+                    </div>
+                    <span>MYSQL</span><span class="pull-right">70%</span>
+                    <div class="progress">
+                      <div class="progress-bar" style="width: 70%;"></div>
+                    </div>
+                    <span>HTML</span><span class="pull-right">60%</span>
+                    <div class="progress">
+                      <div class="progress-bar" style="width: 60%;"></div>
+                    </div>
+                    <span>CSS</span><span class="pull-right">50%</span>
+                    <div class="progress">
+                      <div class="progress-bar" style="width: 50%;"></div>
                     </div>
                   </div>
                 </div>
               </div>
+              <div class="col-md-6">
+                <div class="about-me pt-4 pt-md-0">
+                  <div class="title-box-2">
+                    <h5 class="title-left">About Me</h5>
+                  </div>
+                  <p class="lead">
+                    Experienced web developer with 1.8 years in development, utilizing Python, Django, REST API. Demonstrated proficiency in creating dynamic and user-friendly applications, coupled with effective collaboration in cross-functional teams for successful project delivery.
+                  </p>
+                  <div class="title-box-2">
+                    <h5 class="title-left">Education</h5>
+                  </div>
+                  <p class="lead">
+                    <b>Degree: Bachelor of Science</b><br>
+                    <b>University: Utkal University</b><br>
+                    <b>Percentage: 62%</b><br>
+                    <b>Location: Cuttack, Odisha</b><br>
+                    <b>Year: 2019-2022</b><br>
+                  </p>
+                  <p class="lead">
+                    <b>Intermediate</b><br>
+                    <b>School: Sriram Higher Secondary School</b><br>
+                    <b>Percentage: 61%</b><br>
+                    <b>Location: Salipur, Odisha</b><br>
+                    <b>Year: 2017-2019</b><br>
+                  </p>
+                </div>
+              </div>
             </div>
-    
-        
-        
-    </body>
-    {% endblock body_block %}
-    </html>
-    
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+{% endblock body_block %}
+</html>

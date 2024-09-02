@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-
-{% load static %}
+{% load static compress %}
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -10,10 +9,11 @@
   <meta content="" name="description">
 
   <!-- Favicons -->
-   <!-- <link href="img/favicon.png" rel="icon">
+  <!-- <link href="img/favicon.png" rel="icon">
   <link href="img/apple-touch-icon.png" rel="apple-touch-icon"> -->
 
   <!-- Bootstrap CSS File -->
+  {% compress css %}
   <link href='{% static "lib/bootstrap/css/bootstrap.min.css" %}' rel="stylesheet">
 
   <!-- Libraries CSS Files -->
@@ -25,7 +25,8 @@
 
   <!-- Main Stylesheet File -->
   <link href='{% static "css/style.css" %}' rel="stylesheet">
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> 
+  {% endcompress %}
+
 </head>
 
 <body id="page-top">
@@ -81,20 +82,19 @@
       <div class="table-cell">
         <div class="container">
           <!-- <p class="display-6 color-d">project</p> -->
-           <!-- <h1 class="intro-title mb-4">I am Sitaram</h1> -->
+          <!-- <h1 class="intro-title mb-4">I am Sitaram</h1> -->
           <p class="intro-subtitle"><span class="text-slider-items">Contact Us</span><strong class="text-slider"></strong></p>
           <!-- <h1 class="intro-title mb-4">I am Sitaram</h1> -->
           <div class="container">
             {% if user.is_authenticated %}
               <h3 class="intro-title mb-1"> Welcome, {{ user.username }}!</h3>
               <h1 class="intro-title mb-4">I am Sitaram</h1>
-              {% endif %}
-
-            </div>
+            {% endif %}
+          </div>
           {% if not user.is_authenticated %}
-          <p class="pt-3"><a class="btn btn-primary btn js-scroll px-4" href="/about" role="button">Learn More</a></p>
-          <h1 class="intro-title mb-4">I am Sitaram</h1>
-        {% endif %}
+            <p class="pt-3"><a class="btn btn-primary btn js-scroll px-4" href="/about" role="button">Learn More</a></p>
+            <h1 class="intro-title mb-4">I am Sitaram</h1>
+          {% endif %}
         </div>
       </div>
     </div>
@@ -108,14 +108,14 @@
         <div class="col-sm-12">
           <div class="contact-mf">
             <div id="contact" class="box-shadow-full">
-            <!-- Add the success message display block -->
-            {% if messages %}
-            <div class="alert alert-success">
-              {% for message in messages %}
-                {{ message }}
-              {% endfor %}
-            </div>
-            {% endif %}
+              <!-- Add the success message display block -->
+              {% if messages %}
+              <div class="alert alert-success">
+                {% for message in messages %}
+                  {{ message }}
+                {% endfor %}
+              </div>
+              {% endif %}
               <div class="row">
                 <div class="col-md-6">
                   <div class="title-box-2">
@@ -124,9 +124,7 @@
                     </h5>
                   </div>
                   <div>
-                      <!-- <form action="" method="post" role="form" class="contactForm"> -->
-                        <form action="{% url 'contact' %}" method="post" role="form" class="contactForm">
-
+                    <form action="{% url 'contact' %}" method="post" role="form" class="contactForm">
                       <!-- <div id="sendmessage">Your message has been sent. Thank you!</div> -->
                       <!-- <div id="errormessage"></div> -->
                       <div class="row">
@@ -143,10 +141,10 @@
                           </div>
                         </div>
                         <div class="col-md-12 mb-3">
-                            <div class="form-group">
-                              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-                              <div class="validation"></div>
-                            </div>
+                          <div class="form-group">
+                            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                            <div class="validation"></div>
+                          </div>
                         </div>
                         <div class="col-md-12 mb-3">
                           <div class="form-group">
@@ -170,19 +168,18 @@
                   </div>
                   <div class="more-info">
                     <p class="lead">
-                      I have arround 1 year of experience as a software developer and have knowledge in full-stack development using Python, PySpark, and AWS. If you have any questions, need assistance with Python programming, or have any specific topics or projects you'd like to discuss, feel free to share more details or ask any questions you might have. I'm here to help!
+                      I have around 1 year of experience as a software developer and have knowledge in full-stack development using Python, PySpark, and AWS. If you have any questions, need assistance with Python programming, or have any specific topics or projects you'd like to discuss, feel free to share more details or ask any questions you might have. I'm here to help!
                     </p>
                     <ul class="list-ico">
                       <li><span class="ion-ios-location"></span>Hyderabad</li>
                       <!-- <li><span class="ion-ios-telephone"></span> (91) 9937021721</li> -->
-                      <li>>Fullstack Developer</li>
+                      <li>Fullstack Developer</li>
                     </ul> 
                   </div>
                   <div class="socials">
                     <ul>
                       <!-- <li><a href=""><span class="ico-circle"><i class="ion-social-facebook"></i></span></a></li> -->
                       <li><a href="https://www.linkedin.com/in/sitaramnandi/" target="_blank"><span class="ico-circle"><i class="ion-social-linkedin"></i></span></a></li>
-
                       <li><a href=""><span class="ico-circle"><i class="ion-social-instagram"></i></span></a></li>
                       <li><a href=""><span class="ico-circle"><i class="ion-social-twitter"></i></span></a></li>
                       <!-- <li><a href=""><span class="ico-circle"><i class="ion-social-pinterest"></i></span></a></li> -->
@@ -204,10 +201,9 @@
               <p class="copyright">&copy; Copyright <strong>DevFolio</strong>. All Rights Reserved</p>
               <div class="credits"> 
                
-                
   <!-- <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
   <div id="preloader"></div> -->
-
+  {% compress js %}
   <!-- JavaScript Libraries -->
   <script src='{% static "lib/jquery/jquery.min.js" %}'></script>
   <script src='{% static "lib/jquery/jquery-migrate.min.js" %}'></script>
@@ -220,14 +216,10 @@
   <script src='{% static "lib/lightbox/js/lightbox.min.js" %}'></script>
   <script src='{% static "lib/typed/typed.min.js" %}'></script>
   <!-- Contact Form JavaScript File -->
-  
-
   <!-- Template Main Javascript File -->
   <script src='{% static "js/main.js" %}'></script>
-  {% block body_block %}
-  {% endblock %}
-
+  {% endcompress %}
+  </div>
+</footer>
 </body>
 </html>
-
-

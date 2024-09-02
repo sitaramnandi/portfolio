@@ -44,10 +44,15 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'corsheaders',
     "testapp",
+     'compressor',
+         'debug_toolbar',
+
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+        'debug_toolbar.middleware.DebugToolbarMiddleware',
+
     'django.contrib.sessions.middleware.SessionMiddleware',
         'corsheaders.middleware.CorsMiddleware',
 'whitenoise.middleware.WhiteNoiseMiddleware',
@@ -61,7 +66,12 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'myprofile.urls'
 CORS_ORIGIN_ALLOW_ALL = True
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
+INTERNAL_IPS = [
+    '127.0.0.1',
+]
+DEBUG_TOOLBAR_CONFIG = {
+    'INTERCEPT_REDIRECTS': False,
+}
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -149,7 +159,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 # STATICFILES_DIRS=[STAIC_DIR]
 LOGOUT_REDIRECT_URL ="/"
 # LOGIN_REDIRECT_URL ="/"
@@ -176,3 +186,60 @@ EMAIL_USE_TLS = True
 EMAIL_FROM = 'sitarampravashnandi@gmail.com'
 EMAIL_HOST_USER = 'sitarampravashnandi@gmail.com'
 EMAIL_HOST_PASSWORD = 'zjkf mxej yhts juqx'
+
+
+# CACHES = {
+#     'default': {
+#         'BACKEND': 'django_redis.cache.RedisCache',
+#         'LOCATION': 'redis://127.0.0.1:6379/1',
+#         'OPTIONS': {
+#             'CLIENT_CLASS': 'django_redis.client.DefaultClient',
+#         }
+#     }
+# }
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.redis.RedisCache',
+        'LOCATION': 'rediss://red-crarft2j1k6c73cjo570:EUWOGU9OoGCbWSsMDes8Yfz1hLn9324g@singapore-redis.render.com:6379/1',
+    }
+}
+
+
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'compressor.finders.CompressorFinder',
+]
+COMPRESS_ENABLED = True
+COMPRESS_OFFLINE = False
+COMPRESS_ROOT = STATIC_ROOT
+COMPRESS_URL = STATIC_URL
+COMPRESS_OUTPUT_DIR = 'CACHE'
+
+# settings.py
+
+import os
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(BASE_DIR, 'cache_debug.log'),
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+        'myapp.cache': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': False,
+        },
+    },
+}

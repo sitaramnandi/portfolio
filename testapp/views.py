@@ -116,10 +116,8 @@ def about_page(request):
 def project_page(request):
     logger.debug('project_page view: Accessed')
     return render(request, "project.html")
-
 @cache_page(30)  # Cache for 30 seconds
 def contactus_page(request):
-    # form=contactusform()
     if request.method == "POST":
         name = request.POST.get("name")
         email = request.POST.get("email")
@@ -128,20 +126,21 @@ def contactus_page(request):
         contact_entry = contactus(name=name, email=email, subject=subject, message=message)
         contact_entry.save()
 
-        # send email notification  
+        # Send email notification with customized subject and body
         send_mail(
-            subject,
-            f'From:{name} <{email}>\n\n{message}',
+            f'Nakuri Alert: Message from {name}',  # Customized subject
+            f'You have a new message from {name}:\n\n{message}\n\nContact email: {email}',  # Email body
             settings.EMAIL_HOST_USER,
             [settings.EMAIL_HOST_USER],
             fail_silently=False
         )
-        # Show success message
-        messages.success(request, 'Your message has been sent. Thank you!')
+        # Show success message with user's name
+        messages.success(request, f'Thank you, {name}! Your message has been sent successfully.')
         # Redirect back to the contact page
         return redirect('contact')  # Adjust the URL name as per your URL configuration
 
     return render(request, "contactus.html")
+
 
 @cache_page(30)  # Cache for 30 seconds
 def register(request):

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-{% load static compress %}
+{% load static  %}
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -14,7 +14,7 @@
   <link href="img/apple-touch-icon.png" rel="apple-touch-icon"> -->
 
   <!-- Bootstrap CSS File -->
-  {% compress css %}
+ 
 
   <link href='{% static "lib/bootstrap/css/bootstrap.min.css" %}' rel="stylesheet">
 
@@ -27,7 +27,7 @@
 
   <!-- Main Stylesheet File -->
   <link href='{% static "css/style.css" %}' rel="stylesheet">
-  {% endcompress %}
+
 
 </head>
 
@@ -192,7 +192,7 @@
   </section>
 
   <!-- JavaScript Libraries -->
-  {% compress js %}
+ 
 
   <script src='{% static "lib/jquery/jquery.min.js" %}'></script>
   <script src='{% static "lib/jquery/jquery-migrate.min.js" %}'></script>
@@ -209,7 +209,7 @@
 
   <!-- Template Main Javascript File -->
   <script src='{% static "js/main.js" %}'></script>
-  {% endcompress %}
+  
 
   {% block body_block %}
   {% endblock %}

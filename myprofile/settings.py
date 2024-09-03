@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'corsheaders',
     "testapp",
-     'compressor',
+    
          'debug_toolbar',
 
 ]
@@ -205,16 +205,16 @@ CACHES = {
 }
 
 
-STATICFILES_FINDERS = [
-    'django.contrib.staticfiles.finders.FileSystemFinder',
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    'compressor.finders.CompressorFinder',
-]
-COMPRESS_ENABLED = True
-COMPRESS_OFFLINE = False
-COMPRESS_ROOT = STATIC_ROOT
-COMPRESS_URL = STATIC_URL
-COMPRESS_OUTPUT_DIR = 'CACHE'
+# STATICFILES_FINDERS = [
+#     'django.contrib.staticfiles.finders.FileSystemFinder',
+#     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+#     'compressor.finders.CompressorFinder',
+# ]
+# COMPRESS_ENABLED = True
+# COMPRESS_OFFLINE = False
+# COMPRESS_ROOT = STATIC_ROOT
+# COMPRESS_URL = STATIC_URL
+# COMPRESS_OUTPUT_DIR = 'CACHE'
 
 # settings.py
 
